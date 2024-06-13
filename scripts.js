@@ -34,6 +34,10 @@ function onSubmitValue(value) {
   trashIcon.setAttribute("src", "assets/delete-icon.svg");
   trashIcon.setAttribute("alt", "Icone de uma lixeira");
 
+  trashIcon.addEventListener("click", () => {
+    containerList.remove();
+  });
+
   containerList.append(circleIcon, containerItem, trashIcon);
   containerTasks.append(containerList);
 }
