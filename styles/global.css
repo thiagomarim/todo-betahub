@@ -23,8 +23,7 @@
   --text-color: #6b6572;
   --text-task: #262428;
   --text-task-done: #6b6572;
-  --task-background: #f0edf2;
-  --task-done-background: #e0dce4;
+  --task-background: #e0dce4;
   --task-border: #d1cbd7;
 
   --ff-sans: "Inter", system-ui, sans-serif;
@@ -45,7 +44,7 @@ body {
 .container {
   max-width: 736px;
   margin: 0 auto;
-  padding: 0px 24px;
+  /* padding: 0px 24px; */
 }
 
 .text-input {

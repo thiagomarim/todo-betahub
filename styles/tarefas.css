@@ -67,3 +67,13 @@
   flex-direction: column;
   gap: 4px;
 }
+
+#card-tarefa {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 1rem;
+  gap: 12px;
+  background-color: var(--task-background);
+  border-radius: 8px;
+}
