@@ -50,6 +50,9 @@ function onSubmitValue(value, qnt) {
     containerList.classList.remove("card-tarefa");
     containerList.classList.add("card-tarefa-checked");
 
+    // Adiciona um estilo de texto quando esta marcado como feito
+    containerItem.classList.add("task-checked-text");
+
     completedTasks.innerText = ++c;
   });
 
