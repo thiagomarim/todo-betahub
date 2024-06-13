@@ -1,0 +1,49 @@
+#tarefas {
+  margin-top: 91px;
+}
+
+#header-tarefas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#tarefas-criadas {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#circle-tarefas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 22px;
+  background-color: #ddd2ef;
+  border-radius: 100%;
+}
+
+#quantidade-tarefas {
+  color: var(--purple-primary);
+  font-size: 12px;
+  line-height: 120%;
+  font-weight: 700;
+}
+
+#quantidade-concluida {
+  color: var(--green-primary);
+  font-size: 12px;
+  line-height: 120%;
+  font-weight: 700;
+}
+
+#circle-concluida {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 22px;
+  background-color: #bfe3d0;
+  border-radius: 100%;
+}

@@ -45,26 +45,31 @@ body {
 .container {
   max-width: 736px;
   margin: 0 auto;
+  padding: 0px 24px;
 }
 
 .text-input {
   font-size: var(--fs-input);
   line-height: 140%;
+  color: var(--text-color);
 }
 
 .text-subtitle {
   font-size: var(--fs-subtitle);
   line-height: 120%;
   font-weight: 600;
+  color: var(--text-color);
 }
 
 .text-md {
   font-size: var(--fs-md);
   line-height: 120%;
+  color: var(--text-color);
 }
 
 .text-md-done {
   font-size: var(--fs-md);
   line-height: 120%;
   text-decoration: dotted;
+  color: var(--text-color);
 }
