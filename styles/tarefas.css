@@ -71,6 +71,10 @@
   gap: 4px;
 }
 
+.ocultar {
+  display: none;
+}
+
 .card-tarefa {
   display: flex;
   justify-content: space-between;

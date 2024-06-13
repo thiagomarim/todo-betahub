@@ -8,15 +8,21 @@ const containerTasks = document.getElementById("tarefas-container");
 
 // Seleciona o numero de tarefas
 const tasks = document.getElementById("quantidade-tarefas");
+const completedTasks = document.getElementById("quantidade-concluida");
+
+const noTasks = document.getElementById("sem-tarefas");
 
 // Valor inicial das quantidades de tarefas
 let i = 0;
 
-// Adiciona um evento de submit, e pega o valor do input
+let c = 0;
+
 form.onsubmit = (event) => {
   event.preventDefault();
 
   let inputValue = input.value;
+
+  noTasks.classList.add("ocultar");
 
   // Adiciona mais um tarefa quando o formulário receber um submit
   const qntTasks = (tasks.innerText = ++i);
@@ -24,6 +30,8 @@ form.onsubmit = (event) => {
   // Passa para a função as variáveis
   onSubmitValue(inputValue, qntTasks);
 };
+
+// Adiciona um evento de submit, e pega o valor do input
 
 // Uma função que cria a card de tarefas
 function onSubmitValue(value, qnt) {
@@ -41,6 +49,8 @@ function onSubmitValue(value, qnt) {
     circleIcon.setAttribute("src", "assets/check-icon.svg");
     containerList.classList.remove("card-tarefa");
     containerList.classList.add("card-tarefa-checked");
+
+    completedTasks.innerText = ++c;
   });
 
   // Adiciona o elemento de paragrafo com a tarefa escrita
@@ -61,6 +71,8 @@ function onSubmitValue(value, qnt) {
     i = qnt - 1;
     // Mostra no elemento a quantidade de tarefas
     tasks.innerText = i;
+
+    completedTasks.innerText = --c;
   });
 
   // Adiciona todos os elementos criado dentro do container da lista
