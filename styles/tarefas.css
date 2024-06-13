@@ -50,6 +50,9 @@
 
 #tarefas-container {
   margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .sem-tarefas-items {
@@ -68,7 +71,7 @@
   gap: 4px;
 }
 
-#card-tarefa {
+.card-tarefa {
   display: flex;
   justify-content: space-between;
   align-items: start;
