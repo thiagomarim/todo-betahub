@@ -47,3 +47,23 @@
   background-color: #bfe3d0;
   border-radius: 100%;
 }
+
+#tarefas-container {
+  margin-top: 24px;
+}
+
+.sem-tarefas-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 64px 24px;
+  border-top: 1px solid var(--task-done-background);
+}
+
+.sem-tarefas-items div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
