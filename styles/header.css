@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-secondary);
+  height: 200px;
+  width: 100%;
+}
+
+header img {
+  max-width: 140px;
+  max-height: 48px;
+}

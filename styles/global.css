@@ -39,11 +39,12 @@
 
 body {
   font-family: var(--ff-sans);
+  background-color: var(--background);
 }
 
 .container {
   max-width: 736px;
-  margin: auto 0;
+  margin: 0 auto;
 }
 
 .text-input {
