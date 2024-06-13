@@ -80,3 +80,13 @@
   background-color: var(--task-background);
   border-radius: 8px;
 }
+
+.card-tarefa-checked {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 1rem;
+  gap: 12px;
+  border: 1px solid var(--task-border);
+  border-radius: 8px;
+}

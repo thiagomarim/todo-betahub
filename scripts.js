@@ -20,6 +20,12 @@ function onSubmitValue(value) {
   circleIcon.setAttribute("src", "assets/circle-icon.svg");
   circleIcon.setAttribute("alt", "Icone de um circulo");
 
+  circleIcon.addEventListener("click", () => {
+    circleIcon.setAttribute("src", "assets/check-icon.svg");
+    containerList.classList.remove("card-tarefa");
+    containerList.classList.add("card-tarefa-checked");
+  });
+
   const containerItem = document.createElement("p");
   containerItem.classList.add("tarefa");
   containerItem.innerText = value;
