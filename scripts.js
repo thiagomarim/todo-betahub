@@ -6,17 +6,27 @@ const button = document.querySelector("button");
 // Seleciona a div que tem os conteúdos das tarefas
 const containerTasks = document.getElementById("tarefas-container");
 
+// Seleciona o numero de tarefas
+const tasks = document.getElementById("quantidade-tarefas");
+
+// Valor inicial das quantidades de tarefas
+let i = 0;
+
 // Adiciona um evento de submit, e pega o valor do input
 form.onsubmit = (event) => {
   event.preventDefault();
 
   let inputValue = input.value;
 
-  onSubmitValue(inputValue);
+  // Adiciona mais um tarefa quando o formulário receber um submit
+  const qntTasks = (tasks.innerText = ++i);
+
+  // Passa para a função as variáveis
+  onSubmitValue(inputValue, qntTasks);
 };
 
 // Uma função que cria a card de tarefas
-function onSubmitValue(value) {
+function onSubmitValue(value, qnt) {
   // Cria a div dos items de tarefas
   const containerList = document.createElement("div");
   containerList.classList.add("card-tarefa");
@@ -47,6 +57,10 @@ function onSubmitValue(value) {
   // Adiciona um evento que remove o conteúdo por inteiro
   trashIcon.addEventListener("click", () => {
     containerList.remove();
+    // Subtrai por 1 o valor variável de tarefas quando deletar a tarefa
+    i = qnt - 1;
+    // Mostra no elemento a quantidade de tarefas
+    tasks.innerText = i;
   });
 
   // Adiciona todos os elementos criado dentro do container da lista
