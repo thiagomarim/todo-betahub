@@ -53,9 +53,14 @@ function onSubmitValue(value, qnt) {
     if (circleIcon.classList.value === "circle-icon check-icon") {
       // Caso tiver a classe de check-icon irá adicionar +1 nas tarefas concluídas
       completedTasks.innerText = ++c;
+      containerList.classList.add("card-tarefa-checked");
+      containerList.classList.remove("card-tarefa");
+      containerItem.classList.add("task-checked-text");
     } else {
       // Caso não houver a classe selecionada, irá retirar -1 nas tarefas concluídas
       completedTasks.innerText = --c;
+      containerList.classList.add("card-tarefa");
+      containerItem.classList.remove("task-checked-text");
     }
   });
 
