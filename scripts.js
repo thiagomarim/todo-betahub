@@ -12,9 +12,6 @@ const completedTasks = document.getElementById("quantidade-concluida");
 
 const noTasks = document.getElementById("sem-tarefas");
 
-// Valor inicial das quantidades de tarefas
-let i = 0;
-
 // Valor inicial das tarefas concluídas
 let c = 0;
 
@@ -25,21 +22,19 @@ form.onsubmit = (event) => {
 
   noTasks.classList.add("ocultar");
 
-  // Adiciona mais um tarefa quando o formulário receber um submit
-  const qntTasks = (tasks.innerText = ++i);
-
   // Passa para a função as variáveis
-  onSubmitValue(inputValue, qntTasks);
+  onSubmitValue(inputValue);
 
   input.value = "";
+  input.focus();
 };
 
 // Adiciona um evento de submit, e pega o valor do input
 
 // Uma função que cria a card de tarefas
-function onSubmitValue(value, qnt) {
+function onSubmitValue(value) {
   // Cria a div dos items de tarefas
-  const containerList = document.createElement("div");
+  const containerList = document.createElement("li");
   containerList.classList.add("card-tarefa");
 
   // Adiciona o elemento de imagem com o icone de circulo dentro
@@ -78,15 +73,25 @@ function onSubmitValue(value, qnt) {
   // Adiciona um evento que remove o conteúdo por inteiro
   trashIcon.addEventListener("click", () => {
     containerList.remove();
-    // Subtrai por 1 o valor variável de tarefas quando deletar a tarefa
-    i = qnt - 1;
     // Mostra no elemento a quantidade de tarefas
-    tasks.innerText = i;
+    tasks.innerText = Number(tasks.innerText) - 1;
 
-    completedTasks.innerText = --c;
+    if (circleIcon.classList.value === "circle-icon check-icon") {
+      completedTasks.innerText = --c;
+    }
   });
 
   // Adiciona todos os elementos criado dentro do container da lista
   containerList.append(circleIcon, containerItem, trashIcon);
   containerTasks.append(containerList);
+
+  // Atualiza o valor total de items que tem na lista
+  updateTotals();
+}
+
+// Pega a quantidade de items que a lista possui
+function updateTotals() {
+  const items = containerTasks.children.length;
+  console.log(items);
+  tasks.innerText = items - 1;
 }
