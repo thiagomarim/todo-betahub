@@ -15,6 +15,7 @@ const noTasks = document.getElementById("sem-tarefas");
 // Valor inicial das quantidades de tarefas
 let i = 0;
 
+// Valor inicial das tarefas concluídas
 let c = 0;
 
 form.onsubmit = (event) => {
@@ -40,20 +41,20 @@ function onSubmitValue(value, qnt) {
   containerList.classList.add("card-tarefa");
 
   // Adiciona o elemento de imagem com o icone de circulo dentro
-  const circleIcon = document.createElement("img");
-  circleIcon.setAttribute("src", "assets/circle-icon.svg");
-  circleIcon.setAttribute("alt", "Icone de um circulo");
+  const circleIcon = document.createElement("span");
+  circleIcon.classList.add("circle-icon");
 
   // Ao clicar faz com que troque o icone de circulo para check
   circleIcon.addEventListener("click", () => {
-    circleIcon.setAttribute("src", "assets/check-icon.svg");
-    containerList.classList.remove("card-tarefa");
-    containerList.classList.add("card-tarefa-checked");
-
-    // Adiciona um estilo de texto quando esta marcado como feito
-    containerItem.classList.add("task-checked-text");
-
-    completedTasks.innerText = ++c;
+    circleIcon.classList.toggle("check-icon");
+    // Checa se o span de marcar como a tarefa concluída possui a classe check-icon
+    if (circleIcon.classList.value === "circle-icon check-icon") {
+      // Caso tiver a classe de check-icon irá adicionar +1 nas tarefas concluídas
+      completedTasks.innerText = ++c;
+    } else {
+      // Caso não houver a classe selecionada, irá retirar -1 nas tarefas concluídas
+      completedTasks.innerText = --c;
+    }
   });
 
   // Adiciona o elemento de paragrafo com a tarefa escrita
@@ -74,8 +75,6 @@ function onSubmitValue(value, qnt) {
     i = qnt - 1;
     // Mostra no elemento a quantidade de tarefas
     tasks.innerText = i;
-
-    completedTasks.innerText = --c;
   });
 
   // Adiciona todos os elementos criado dentro do container da lista

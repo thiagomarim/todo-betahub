@@ -82,3 +82,19 @@ img {
     padding: 0px 24px;
   }
 }
+
+.circle-icon {
+  background-image: url("../assets/circle-icon.svg");
+  width: 20px;
+  height: 20px;
+}
+
+.circle-icon:hover {
+  cursor: pointer;
+}
+
+.check-icon {
+  background-image: url("../assets/check-icon.svg");
+  width: 20px;
+  height: 20px;
+}
