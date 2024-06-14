@@ -30,6 +30,8 @@ form.onsubmit = (event) => {
 
   // Passa para a função as variáveis
   onSubmitValue(inputValue, qntTasks);
+
+  input.value = "";
 };
 
 // Adiciona um evento de submit, e pega o valor do input
