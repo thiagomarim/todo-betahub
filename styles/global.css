@@ -45,7 +45,6 @@ body {
 .container {
   max-width: 736px;
   margin: 0 auto;
-  /* padding: 0px 24px; */
 }
 
 .text-input {
@@ -76,4 +75,10 @@ body {
 
 img {
   cursor: pointer;
+}
+
+@media (max-width: 750px) {
+  .container {
+    padding: 0px 24px;
+  }
 }

@@ -35,7 +35,7 @@
   outline-color: var(--purple-primary);
 }
 
-#taskForm button {
+#button-default {
   padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
@@ -49,7 +49,34 @@
   font-weight: 800;
 }
 
-#taskForm button:hover {
+#button-default:hover {
   cursor: pointer;
   background-color: #9359f3;
+}
+
+#button-mobile {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  #taskForm {
+    padding: 0px 24px;
+  }
+
+  #button-default {
+    display: none;
+  }
+
+  #button-mobile {
+    padding: 1rem 1.5rem;
+    display: block;
+    background-color: var(--purple-primary);
+    border: none;
+    border-radius: 8px;
+  }
+
+  #button-mobile:hover {
+    cursor: pointer;
+    background-color: #9359f3;
+  }
 }
