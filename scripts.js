@@ -77,6 +77,8 @@ function onSubmitValue(value, qnt) {
     i = qnt - 1;
     // Mostra no elemento a quantidade de tarefas
     tasks.innerText = i;
+
+    completedTasks.innerText = --c;
   });
 
   // Adiciona todos os elementos criado dentro do container da lista
